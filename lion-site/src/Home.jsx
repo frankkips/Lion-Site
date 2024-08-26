@@ -11,12 +11,12 @@ function Home(){
             <div className="search">
                 <input type="text" placeholder="Search..." />
             </div>
-            <li>
-                <ul><Link to='/'>Home</Link></ul>
-                <ul><Link to='/'>About</Link></ul>
-                <ul><Link to='/'>Contact Us</Link></ul>
-                <ul><Link to='/product'>Products</Link></ul>
-            </li>
+            <ul>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/'>About</Link></li>
+                <li><Link to='/'>Contact</Link></li>
+                <li><Link to='/product'>Products</Link></li>
+            </ul>
         </div>
         <div className="body">
             <div className="card-container">

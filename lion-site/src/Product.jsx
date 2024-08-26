@@ -1,4 +1,5 @@
 import PICHA from './assets/example.jpg'
+import { Link } from 'react-router-dom'
 
 
 function Product (){
@@ -11,10 +12,10 @@ function Product (){
                 <input type="text" placeholder="Search..." />
             </div>
             <li>
-                <ul>Home</ul>
-                <ul>About</ul>
-                <ul>Contact Us</ul>
-                <ul>Products</ul>
+                <ul><Link to='/'>Home</Link></ul>
+                <ul><Link to='/'>About</Link></ul>
+                <ul><Link to='/'>Contact Us</Link></ul>
+                <ul><Link to='/product'>Products</Link></ul>
             </li>
         </div>
         <div className="body-product">

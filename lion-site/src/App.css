@@ -9,6 +9,7 @@
 }
 
 .header h1 {
+    cursor: pointer;
     margin: 0;
     font-size: 2em;
     font-weight: bold;
@@ -31,7 +32,7 @@
     font-size: 1em;
     color: #333;
     background: transparent;
-    width: 150px;
+    width: 100%;
 }
 
 .search input::placeholder {
@@ -57,12 +58,17 @@
 .header li a {
     text-decoration: none;
     font-size: 1em;
-    color: black; /* Default color */
-    display: block; /* Ensure clickable area includes padding/margin */
+    color: black; 
+    display: block; 
 }
 
 .header li a:hover {
-    color: #ff6347; /* Hover color */
+    color: #ff6347; 
+}
+
+.menu-icon img {
+    width: 30px;
+    height: 30px;
 }
 
 
@@ -79,7 +85,7 @@
     .search {
         margin-left: 0;
         width: 100%;
-        max-width: 500px; /* Adjust the width as needed */
+        max-width: 300px; /* Adjust the width as needed */
         margin-bottom: 15px; /* Add some spacing below the search bar */
     }
 
@@ -107,7 +113,7 @@
     }
 
     .search {
-        width: 100%;
+        width: 90%;
         margin-left: 0;
         margin-bottom: 15px; /* Add spacing below search bar */
     }
@@ -140,7 +146,7 @@
 
     .search {
         padding: 5px 10px;
-        width: 100%;
+        width: 90%;
     }
 
     .header h1 {
@@ -166,13 +172,13 @@
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     width: 100%;
-    /* max-width: 1200px; */
 }
 
 .card {
+    /* height: 100%; */
     border-radius: 10px;
     overflow: hidden;
     background-color: white;
@@ -185,10 +191,18 @@
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+.card-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    /* background-color: red; */
+}
 
 .card-image img {
     width: 100%;
     height: auto;
+    /* object-fit: cover; */
     border-bottom: 1px solid #ddd;
     margin-bottom: 20px;
 }
@@ -220,17 +234,25 @@
     .card p {
         font-size: 0.9em; /* Slightly smaller font size for paragraphs */
     }
+
+    .card-image{
+        height: auto;
+    }
 }
 
 /* Mobile devices */
 @media (max-width: 768px) {
     .card-container {
-        grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+        grid-template-columns: repeat(1, 1fr); /* Two cards per row */
         gap: 15px;
     }
 
     .card h1 {
         font-size: 1.2em; /* Further reduce font size for titles */
+    }
+
+    .card-image{
+        height: auto;
     }
 
     .card p {
@@ -241,7 +263,7 @@
 /* Very small screens (portrait phones) */
 @media (max-width: 480px) {
     .card-container {
-        grid-template-columns: repeat(2,1fr); /* Single column layout for very small screens */
+        grid-template-columns: repeat(1,1fr); /* Single column layout for very small screens */
         gap: 10px;
     }
 
@@ -289,10 +311,11 @@
 }
 
 .other .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    display: flex;
+    /* grid-template-columns: repeat(7,1fr); */
     gap: 20px;
-    width: 100%;
+    /* width: 100%; */
+    height: 500px;
     margin-top: 20px;
 }
 

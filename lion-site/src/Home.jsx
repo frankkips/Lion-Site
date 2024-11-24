@@ -1,4 +1,4 @@
-import './App.css'
+import './index.css';
 // import PICHA from './assets/example.jpg'
 // import { Link} from 'react-router-dom'
 import Header from './Header';
@@ -12,7 +12,7 @@ function Home(){
     return (
         <>
         <Header/>
-        <div className="body">
+        <div className="p-5 bg-jet-black">
             <Card/>
         </div>
         </>

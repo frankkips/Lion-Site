@@ -1,4 +1,5 @@
-import './App.css'
+// import './App.css'
+import './index.css';
 import Home from './Home'
 import Product from './Product'
 import About from './About'
@@ -11,7 +12,7 @@ function App() {
   const router = createBrowserRouter([{
     path: '/',
     element: <Home/>,
-    errorElement: <div className='err'>Ooops! 404 Not Found <Link to='/' className='return'>Return Home</Link></div>,
+    errorElement: <div className='bg-gray-100'>Ooops! 404 Not Found <Link to='/' className='return'>Return Home</Link></div>,
   },
   {
     path: '/product',

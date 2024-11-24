@@ -37,16 +37,17 @@ const Contact = () => {
     return (
         <>
             <Header/>
-            <div className="body">
-            <div className="card-container" >
+            <div className="p-5 bg-jet-black ">
+            <div className="grid grid-cols-4 gap-4" >
             {clickedImages.length === 0 ? (
-                <p>No images have been clicked yet.</p>
+                <p className='text-white'>No images have been clicked yet.</p>
             ) : (<>
                     {clickedImages.map((item, index) => (
                         <>
-                        <div className='card'>
-                        <div key={index} className='card-image'>
+                        <div className=''>
+                        <div key={index} className='flex flex-col rounded-3xl text-center justify-between'>
                             <img 
+                            className='rounded-3xl'
                             key={index} 
                             src={`http://localhost:8000/images/${item.image_name}`} 
                             alt={item.image_name} 

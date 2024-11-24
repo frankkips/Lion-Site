@@ -30,13 +30,13 @@ CLICKED_IMAGES_FILE = Path("waba.json")
 @app.get("/images/{image_name}")
 async def get_image(image_name: str):
     image_path = IMAGES_DIR / image_name
-    if image_path.exists() and image_path.suffix == ".txt":
+    if image_path.exists() and image_path.suffix == ".JPG":
         return FileResponse(image_path)
     raise HTTPException(status_code=404, detail="Image not found")
 
 @app.get("/images")
 async def list_images():
-    images = [img.name for img in IMAGES_DIR.glob("*.txt")]
+    images = [img.name for img in IMAGES_DIR.glob("*.JPG")]
     return {"images": images}
 
 # Endpoint to save clicked images

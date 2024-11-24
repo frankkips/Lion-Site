@@ -34,19 +34,20 @@ function Card (){
 
     return (
         <>
-        <div className="card-container">
+        <div className="grid grid-cols-4 gap-4">
             {images.map((image, index) => (
                 <>
-                <div className="card">
-                    <div className="card-image">
-                    <img 
+                <div className="bg-feldgrau rounded-3xl p-2 ">
+                    <div className="flex flex-col rounded-3xl text-center justify-between">
+                    <img
+                        className="rounded-t-2xl h-80 object-cover"
                         key={index} 
                         src={`http://localhost:8000/images/${image}`} 
                         alt={image} 
                         onClick={() => handleImageClick(image)}
                     />
-                    <h1>{image}</h1>
-                    <p>{image}</p>
+                    <h1 className="font-semibold mb-2 mt-2">{image}</h1>
+                    <p className="text-sm text-white">{image}</p>
                     </div>
                 </div>
                 </>

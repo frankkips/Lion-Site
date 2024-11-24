@@ -8,7 +8,7 @@ function About(){
     return(
         <>
         <Header/>
-        <div className="body">
+        <div className="p-5 bg-jet-black">
             <Card/>
         </div>
         </>

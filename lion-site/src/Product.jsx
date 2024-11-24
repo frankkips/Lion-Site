@@ -15,6 +15,7 @@ function Product (){
                     <p>Cast Iron</p>
                 </div>
             </div>
+            <h1>People also like</h1>
             <div className="other">
                 <Card/>
             </div>

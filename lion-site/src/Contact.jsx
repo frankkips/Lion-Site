@@ -6,6 +6,19 @@ const Contact = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const handleImageClick = async (image) => {
+        try {
+            const response = await fetch(`http://localhost:8000/clicked-images/${image}`, {
+                method: "DELETE",
+            });
+    
+            const result = await response.json();
+            console.log(result.message); // Logs "Deleted <image_name>"
+        } catch (error) {
+            console.error("Error deleting image:", error);
+        }
+    };
+
     useEffect(() => {
         const fetchClickedImages = async () => {
             try {
@@ -38,19 +51,20 @@ const Contact = () => {
         <>
             <Header/>
             <div className="p-5 bg-jet-black ">
-            <div className="grid grid-cols-4 gap-4" >
+            <div className="columns-4 gap-2" >
             {clickedImages.length === 0 ? (
                 <p className='text-white'>No images have been clicked yet.</p>
             ) : (<>
                     {clickedImages.map((item, index) => (
                         <>
                         <div className=''>
-                        <div key={index} className='flex flex-col rounded-3xl text-center justify-between'>
+                        <div key={index} className='rounded-3xl text-center justify-between mb-2'>
                             <img 
                             className='rounded-3xl'
                             key={index} 
                             src={`http://localhost:8000/images/${item.image_name}`} 
                             alt={item.image_name} 
+                            onClick={()=> handleImageClick(item.image_name)}
                         />
                         </div>
                         </div></>

@@ -1,16 +1,19 @@
 import { useEffect , useState} from "react";
+import { useNavigate } from "react-router-dom";
+
 
 function Card (){
     const [images, setImages] = useState([]);
+    const navigate = useNavigate()
 
-    const handleImageClick = async (imageName) => {
+    const handleImageClick = async (image) => {
         try {
             const response = await fetch('http://localhost:8000/clicked-images', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ image_name: imageName }),
+                body: JSON.stringify({ image_name: image }),
             });
 
             if (!response.ok) {
@@ -24,6 +27,7 @@ function Card (){
             console.error(error);
             // Optionally, handle errors here (e.g., display error message)
         }
+        navigate('/product' , {state: {name: image}})
     };
 
     useEffect(() => {
@@ -40,7 +44,7 @@ function Card (){
                 <div className="bg-feldgrau rounded-3xl p-2 ">
                     <div className="flex flex-col rounded-3xl text-center justify-between">
                     <img
-                        className="rounded-t-2xl h-80 object-cover"
+                        className="rounded-t-2xl h-auto object-cover"
                         key={index} 
                         src={`http://localhost:8000/images/${image}`} 
                         alt={image} 
